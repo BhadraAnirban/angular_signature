@@ -1,5 +1,5 @@
 # Angular signature using canvas
-### Inside the Signature you will find the mentioned files.
+### Inside the Signature folder you will find the mentioned files.
 
 ## Add the "model" folder in your app folder or the parent folder of the component folder where you want to implement the signature control. It has some typescript files.
 

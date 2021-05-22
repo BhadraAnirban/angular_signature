@@ -3,7 +3,7 @@
 
 ## Add the "model" folder in your app folder or the parent folder of the component folder where you want to implement the signature control. It has some typescript files.
 
-##In the signature.component.ts-
+## In the signature.component.ts-
 ```
 import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter, OnChanges, SimpleChanges, HostListener } from '@angular/core';
 import { SignaturePad } from '../models/signature_pad';
@@ -100,7 +100,7 @@ export class SignatureComponent implements OnInit, AfterViewInit {
 
 ```
 
-##In the signature.component.html-
+## In the signature.component.html-
 
 ```
 <button id="save-jpeg" *ngIf="isEditable" [hidden]="!(signature && !doEdit)" class="btn bg-taj-blue btn-outline-dark btn-sm mr-2" (click)="doEdit = true;">Edit Signature</button>

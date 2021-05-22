@@ -1,0 +1,19 @@
+<button id="save-jpeg" *ngIf="isEditable" [hidden]="!(signature && !doEdit)" class="btn bg-taj-blue btn-outline-dark btn-sm mr-2" (click)="doEdit = true;">Edit Signature</button>
+<div [hidden]="!doEdit" class="col-span-6 sm:col-span-3">
+  <b for="content">Type your name for signature:</b>
+  <span style="color:red; padding-left: 26px;" *ngIf="ShowValidationMessage">Please type your name below for Signature or sign with mouse.</span>
+  <input type="text" [hidden]="!doEdit" class="form-input" [(ngModel)]="signatureText" (change)="SignatureTextChanged();" (keyup)="SignatureTextChanged();" />
+</div>
+<div [hidden]="!doEdit">
+  <b for="content">OR Sign with Mouse:</b>
+</div>
+<div class="wrapper">
+  <canvas [hidden]="!doEdit" id="signature-pad" class="signature-pad" width={{canvasWidth}} height={{canvasHeight}} style="border: 2px solid blue;"></canvas>
+  <img [hidden]="!(signature && !doEdit)" width={{imageWidth}} height={{canvasHeight}} src="{{signature}}" [ngClass]="{'signature-image': isEditable}" style="margin-top: 9px;" />
+  <div>
+ 
+  </div>
+</div>
+
+
+<button id="clear" [hidden]="!(!signature || doEdit)" class="btn bg-taj-blue btn-outline-dark btn-sm mr-2" (click)="ClearSignature();">Reset</button>
